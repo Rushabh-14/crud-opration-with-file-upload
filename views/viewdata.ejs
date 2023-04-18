@@ -1,0 +1,28 @@
+<table border="1">
+    <tr>
+        <td>BOOK NAME</td>
+        <td>BOOK PRICE</td>
+        <td>BOOK PAGAS</td>
+        <td>BOOK AUTHOR</td>
+        <td>BOOK IMAGE</td>
+        <td>ACTION</td>
+    </tr>
+    <% for(i in recorddata) { %>
+        <tr>
+            <td><%= recorddata[i].book_name %></td>
+            <td><%= recorddata[i].book_price %></td>
+            <td><%= recorddata[i].book_pagas %></td>
+            <td><%= recorddata[i].book_author %></td>
+            <td>
+                <img src="<%= recorddata[i].avatar %>" width="100" alt="">
+            </td>
+            <td>
+                <a href="/deletedata/<%= recorddata[i].id %>">Delete</a>
+                ||
+                <a href="/editdata/<%= recorddata[i].id %>">edit</a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+<a href="/">insertdata</a>

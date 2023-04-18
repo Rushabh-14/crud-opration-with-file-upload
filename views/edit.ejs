@@ -1,0 +1,35 @@
+<form method="post" action="/updatedata" enctype="multipart/form-data">
+    <input type="hidden" name="edit_id" value="<%= single.id %>"/>
+    <table border="2">
+        <tr>
+            <td>BOOK NAME : </td>
+            <td><input type="text" name="book_name" value="<%= single.book_name %>"></td>
+        </tr>
+        <tr>
+            <td>BOOK PRICE : </td>
+            <td><input type="number" name="book_price" value="<%= single.book_price %>"></td>
+        </tr>
+        <tr>
+            <td>BOOK pages : </td>
+            <td><span id="price"><%= single.book_pagas %></span><input type="range" name="book_pages" min="0" max="1000" oninput="price(this.value)" value="<%= single.book_pagas %>"></td>
+        </tr>
+        <tr>
+            <td>BOOK author : </td>
+            <td><input type="text" name="book_author" value="<%= single.book_author %>"></td>
+        </tr>
+        <tr>
+            <td>Image : </td>
+            <td>
+                <input type="file" name="avatar" />
+                <img src="<%= single.avatar %>" width="100" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+
+<a href="/viewdata">viewdata</a>
+<a href="/">insertdata</a>
